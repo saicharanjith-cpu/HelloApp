@@ -1,10 +1,11 @@
 /**
- * UC4: Display "Hello" with Multiple Command-Line Arguments or Default Message
+ * UC5: Display "Hello" with Multiple Command-Line Arguments using Enhanced For Loop or Default Message
  *
- * Description: Accept multiple names via command-line arguments and greet all of them.
- * If no arguments are provided, default to "World".
+ * Description: Accept zero or more command-line arguments and print greetings.
+ * Uses an enhanced for loop (for-each) to process multiple names.
+ * If no arguments are provided, displays the default greeting: "Hello, World!".
  *
- * Branch: feature/UC4-display-multiple-names
+ * Branch: feature/UC5-enhanced-for-loop
  * Merged to: dev
  */
 public class HelloApp {
@@ -13,14 +14,10 @@ public class HelloApp {
             System.out.println("Hello, World!");
         } else {
             System.out.print("Hello");
-            for (int i = 0; i < args.length; i++) {
-                if (i == args.length - 1) {
-                    System.out.print(", " + args[i] + "!");
-                } else {
-                    System.out.print(", " + args[i]);
-                }
+            for (String name : args) {
+                System.out.print(", " + name);
             }
-            System.out.println();
+            System.out.println("!");
         }
     }
 }
