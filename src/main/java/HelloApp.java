@@ -1,20 +1,26 @@
 /**
- * UC3: Display "Hello" with Command-Line Argument or Default Message
+ * UC4: Display "Hello" with Multiple Command-Line Arguments or Default Message
  *
- * Description: Accept one name via command-line input and greet that user.
- * If no argument is provided, default to "World".
+ * Description: Accept multiple names via command-line arguments and greet all of them.
+ * If no arguments are provided, default to "World".
  *
- * Branch: feature/UC3-display-name-default
+ * Branch: feature/UC4-display-multiple-names
  * Merged to: dev
  */
 public class HelloApp {
     public static void main(String[] args) {
-        String name;
-        if (args.length >= 1) {
-            name = args[0];
+        if (args.length == 0) {
+            System.out.println("Hello, World!");
         } else {
-            name = "World";
+            System.out.print("Hello");
+            for (int i = 0; i < args.length; i++) {
+                if (i == args.length - 1) {
+                    System.out.print(", " + args[i] + "!");
+                } else {
+                    System.out.print(", " + args[i]);
+                }
+            }
+            System.out.println();
         }
-        System.out.println("Hello, " + name + "!");
     }
 }
