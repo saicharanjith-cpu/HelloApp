@@ -1,15 +1,18 @@
 /**
- * UC1: Display "Hello World"
+ * UC2: Display "Hello" with Command-Line Argument
  * 
- * Description: The app displays "Hello World" on the console when executed.
- * This is the most basic use case to demonstrate a simple Java application
- * that outputs text to the console.
+ * Description: Accept one name via command-line input and greet that user.
+ * If no argument is provided, prompt the user to provide a name.
  * 
- * Branch: feature/UC1-display-hello-world
+ * Branch: feature/UC2-display-hello-with-argument
  * Merged to: dev
  */
 public class HelloApp {
     public static void main(String[] args) {
-        System.out.println("Hello World");
+        if (args.length >= 1) {
+            System.out.println("Hello " + args[0]);
+        } else {
+            System.out.println("Please provide a name as a command-line argument.");
+        }
     }
 }
